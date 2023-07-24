@@ -9,7 +9,7 @@
             "url": "{orangehrm-url}",
             "variables": {
                 "orangehrm-url": {
-                    "default": "https://opensource-demo.orangehrmlive.com/web/index.php"
+                    "default": "http://php74/56dev/web/index.php"
                 }
             }
         }
