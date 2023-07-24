@@ -14,13 +14,17 @@
             }
         }
     ],
+    "security": [
+        "BearerAuth": []
+    ],
     "paths": {
         "/api/v2/admin/educations/{id}": {
             "get": {
                 "tags": [
                     "Admin/Education"
                 ],
-                "operationId": "85d2fb1521689313e1903de8a061a5c5",
+                "operationId": "getOneEducation",
+                "summary": "Retrieve an education record",
                 "parameters": [
                     {
                         "in": "path",
@@ -59,7 +63,8 @@
                 "tags": [
                     "Admin/Education"
                 ],
-                "operationId": "6769e5a43e5da9f99ec2b0af3c0cfcfe",
+                "operationId": "putEducation",
+                "summary": "Update an education record",
                 "parameters": [
                     {
                         "in": "path",
@@ -117,7 +122,8 @@
                 "tags": [
                     "Admin/Education"
                 ],
-                "operationId": "bbc76573c4c93471da0f0f965c06c221",
+                "operationId": "getEducations",
+                "summary": "Retrieve education records",
                 "parameters": [
                     {
                         "name": "sortField",
@@ -173,7 +179,8 @@
                 "tags": [
                     "Admin/Education"
                 ],
-                "operationId": "c766cd3bf4c9fbc024211a9163b21fc2",
+                "operationId": "postEducation",
+                "summary": "Create an education record",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -216,7 +223,8 @@
                 "tags": [
                     "Admin/Education"
                 ],
-                "operationId": "6aa0615d708abfa41c03d8baff1e1444",
+                "operationId": "deleteEducation",
+                "summary": "Delete education records",
                 "requestBody": {
                     "$ref": "#/components/requestBodies/DeleteRequestBody"
                 },
