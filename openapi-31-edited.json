@@ -25294,6 +25294,10 @@
                 "type": "apiKey",
                 "name": "_orangehrm",
                 "in": "cookie"
+            },
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
             }
         }
     }
