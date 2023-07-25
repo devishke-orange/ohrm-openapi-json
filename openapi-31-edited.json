@@ -18,6 +18,16 @@
     "security": [
         "BearerAuth": []
     ],
+    "tags": [
+        {
+          "name": "Admin/Education",
+          "description": "This endpoint can only be used by **Admin** Users. It facilitates CRUD (create, read, update, delete) operations on Education types (e.g. - Bachelors, Masters) which can be selected by an employee (ESS) when updating their profile."
+        },
+        {
+          "name": "Admin/Email Configuration",
+          "description": "This endpoint can only be used by **Admin** Users. It facilitates read and update operations for configuring emails. By configuring the email, admins can sign up users for email subscriptions."
+        }
+      ],
     "paths": {
         "/api/v2/admin/educations/{id}": {
             "get": {
@@ -33,7 +43,8 @@
                         "name": "id",
                         "schema": {
                             "type": "integer"
-                        }
+                        },
+                        "description": "Numerical ID of the education type"
                     }
                 ],
                 "responses": {
@@ -128,6 +139,7 @@
                 "parameters": [
                     {
                         "name": "sortField",
+                        "description": "Sort the collection by the education name",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -19994,10 +20006,12 @@
             "Admin-EducationModel": {
                 "properties": {
                     "id": {
-                        "type": "integer"
+                        "type": "integer",
+                        "description": "Numerical ID of the education type"
                     },
                     "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "Name of the education type"
                     }
                 },
                 "type": "object"
@@ -25235,6 +25249,7 @@
             "sortOrder": {
                 "name": "sortOrder",
                 "in": "query",
+                "description": "Sort the collection in ascending or descending order",
                 "required": false,
                 "schema": {
                     "type": "string",
@@ -25247,6 +25262,7 @@
             "limit": {
                 "name": "limit",
                 "in": "query",
+                "description": "Limit the number of items in the collection",
                 "required": false,
                 "schema": {
                     "type": "integer",
@@ -25256,6 +25272,7 @@
             "offset": {
                 "name": "offset",
                 "in": "query",
+                "description": "Specify the starting point of the collection",
                 "required": false,
                 "schema": {
                     "type": "integer",
@@ -25276,7 +25293,8 @@
                                     "type": "array",
                                     "items": {
                                         "type": "integer"
-                                    }
+                                    },
+                                    "description": "An array of IDs corresponding to the items which the user wishes to delete"
                                 }
                             },
                             "type": "object"
